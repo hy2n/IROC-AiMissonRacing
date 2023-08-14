@@ -1,0 +1,482 @@
+﻿version 3.00
+cm_version 1.0
+platform CM-530
+o main
+o begin
+o load param_dest:cm:22 param_src:channel_num:255
+o load param_dest:var:처음 param_src:bool_num:1
+o load param_dest:motion:1:50 param_src:dec_num:1
+o while(1)
+o begin
+o if param_src:cm:2 lop:== param_src:bool_num:1 rop:then
+o begin
+- 
+o load param_dest:var:수신데이터 param_src:cm:1
+o if param_src:var:수신데이터 lop:== param_src:rc100z_num:1 rop:then
+o begin
+o if param_src:motion:1:50 lop:>= param_src:dec_num:3 rop:&& param_src:motion:1:50 lop:<= param_src:dec_num:12 rop:then
+o begin
+o if param_src:motion:1:50 lop:== param_src:dec_num:9 rop:|| param_src:motion:1:50 lop:== param_src:dec_num:11 rop:then
+o begin
+o call faddr_dest:Exit실행없이정지
+o load param_dest:motion:1:50 param_src:dec_num:6
+o end
+o elseif param_src:motion:1:50 lop:== param_src:dec_num:10 rop:|| param_src:motion:1:50 lop:== param_src:dec_num:12 rop:then
+o begin
+o call faddr_dest:Exit실행없이정지
+o load param_dest:motion:1:50 param_src:dec_num:5
+o end
+o elseif param_src:motion:1:50 lop:== param_src:dec_num:7 rop:then
+o begin
+o call faddr_dest:모션완료대기
+o load param_dest:motion:1:50 param_src:dec_num:4
+o end
+o elseif param_src:motion:1:50 lop:== param_src:dec_num:8 rop:then
+o begin
+o call faddr_dest:모션완료대기
+o load param_dest:motion:1:50 param_src:dec_num:3
+o end
+o end
+o else
+o begin
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:3
+o end
+o end
+- 
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:65 rop:then
+o begin
+o if param_src:motion:1:50 lop:>= param_src:dec_num:90 rop:&& param_src:motion:1:50 lop:<= param_src:dec_num:95 rop:then
+o begin
+o if param_src:motion:1:50 lop:== param_src:dec_num:94 rop:then
+o begin
+o call faddr_dest:모션완료대기
+o load param_dest:motion:1:50 param_src:dec_num:91
+o end
+o elseif param_src:motion:1:50 lop:== param_src:dec_num:95 rop:then
+o begin
+o call faddr_dest:모션완료대기
+o load param_dest:motion:1:50 param_src:dec_num:90
+o end
+o end
+o else
+o begin
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:90
+o end
+o end
+- 
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:2 rop:then
+o begin
+o if param_src:motion:1:50 lop:>= param_src:dec_num:13 rop:&& param_src:motion:1:50 lop:<= param_src:dec_num:18 rop:then
+o begin
+o if param_src:motion:1:50 lop:== param_src:dec_num:17 rop:then
+o begin
+o call faddr_dest:모션완료대기
+o load param_dest:motion:1:50 param_src:dec_num:14
+o end
+o elseif param_src:motion:1:50 lop:== param_src:dec_num:18 rop:then
+o begin
+o call faddr_dest:모션완료대기
+o load param_dest:motion:1:50 param_src:dec_num:13
+o end
+o end
+o else
+o begin
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:13
+o end
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:4 rop:then
+o begin
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:28
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:8 rop:then
+o begin
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:27
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:5 rop:then
+o begin
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:44
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:9 rop:then
+o begin
+o if param_src:motion:1:50 lop:>= param_src:dec_num:3 rop:&& param_src:motion:1:50 lop:<= param_src:dec_num:12 rop:then
+o begin
+o if param_src:motion:1:50 lop:== param_src:dec_num:5 rop:|| param_src:motion:1:50 lop:== param_src:dec_num:9 rop:then
+o begin
+o call faddr_dest:Exit실행없이정지
+o load param_dest:motion:1:50 param_src:dec_num:11
+o end
+o elseif param_src:motion:1:50 lop:== param_src:dec_num:7 rop:then
+o begin
+o call faddr_dest:모션완료대기
+o load param_dest:motion:1:50 param_src:dec_num:4
+o end
+o elseif param_src:motion:1:50 lop:== param_src:dec_num:8 rop:then
+o begin
+o call faddr_dest:모션완료대기
+o load param_dest:motion:1:50 param_src:dec_num:3
+o end
+o end
+o else
+o begin
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:3
+o end
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:256 rop:then
+o begin
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:23
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:512 rop:then
+o begin
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:24
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:17 rop:then
+o begin
+o // param_text:앞으로 일어나기
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:29
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:18 rop:then
+o begin
+o // param_text:뒤로 일어나기
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:30
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:129 rop:then
+o begin
+o // param_text:꺼내서넣기앞
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:46
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:130 rop:then
+o begin
+o // param_text:꺼내기뒤
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:47
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:33 rop:then
+o begin
+o // param_text:상단치기
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:41
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:36 rop:|| param_src:var:수신데이터 lop:== param_src:rc100z_num:40 rop:then
+o begin
+o // param_text:중단치기
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:40
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:34 rop:then
+o begin
+o // param_text:하단치기
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:39
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:320 rop:then
+o begin
+o // param_text:미세오른사이드
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:51
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:576 rop:then
+o begin
+o // param_text:미세왼사이드
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:52
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:72 rop:then
+o begin
+o // param_text:미세오턴
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:49
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:68 rop:then
+o begin
+o // param_text:미세왼턴
+o call faddr_dest:Exit실행후정지
+o load param_dest:motion:1:50 param_src:dec_num:50
+o call faddr_dest:모션완료대기
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:1010 rop:then
+o begin
+o load param_dest:motor:254:108 param_src:dec_num:0
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:1009 rop:then
+o begin
+o load param_dest:motor:254:108 param_src:dec_num:1023
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:242 rop:then
+o begin
+o load param_dest:motor:19:108 param_src:dec_num:0
+o load param_dest:motor:20:108 param_src:dec_num:0
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:241 rop:then
+o begin
+o load param_dest:motor:19:108 param_src:dec_num:1023
+o load param_dest:motor:20:108 param_src:dec_num:1023
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:129 rop:then
+o begin
+o // param_text:오른손 앞
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:129 rop:then
+o begin
+o compute param_dest:motor:1:106 param_src:motor:1:109 aop:+ param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:33 rop:then
+o begin
+o // param_text:왼손 앞
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:33 rop:then
+o begin
+o compute param_dest:motor:2:106 param_src:motor:2:109 aop:- param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:34 rop:then
+o begin
+o // param_text:왼손 뒤
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:34 rop:then
+o begin
+o compute param_dest:motor:2:106 param_src:motor:2:109 aop:+ param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:130 rop:then
+o begin
+o // param_text:오른손 뒤
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:130 rop:then
+o begin
+o compute param_dest:motor:1:106 param_src:motor:1:109 aop:- param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:640 rop:then
+o begin
+o // param_text:오른손 그립 벌리기
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:640 rop:then
+o begin
+o compute param_dest:motor:5:106 param_src:motor:5:109 aop:- param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:544 rop:then
+o begin
+o // param_text:왼손 그립벌리기
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:544 rop:then
+o begin
+o compute param_dest:motor:6:106 param_src:motor:6:109 aop:+ param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:288 rop:then
+o begin
+o // param_text:왼손 그립닫기
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:288 rop:then
+o begin
+o compute param_dest:motor:6:106 param_src:motor:6:109 aop:- param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:384 rop:then
+o begin
+o // param_text:오른손 그립닫기
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:384 rop:then
+o begin
+o compute param_dest:motor:5:106 param_src:motor:5:109 aop:+ param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:136 rop:then
+o begin
+o // param_text:일반놓기 오른쪽
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:136 rop:then
+o begin
+o compute param_dest:motor:7:106 param_src:motor:7:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:8:106 param_src:motor:8:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:9:106 param_src:motor:9:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:10:106 param_src:motor:10:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:17:106 param_src:motor:17:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:18:106 param_src:motor:18:109 aop:+ param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:40 rop:then
+o begin
+o // param_text:일반놓기 오른쪽(위에랑 같은거)
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:40 rop:then
+o begin
+o compute param_dest:motor:7:106 param_src:motor:7:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:8:106 param_src:motor:8:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:9:106 param_src:motor:9:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:10:106 param_src:motor:10:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:17:106 param_src:motor:17:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:18:106 param_src:motor:18:109 aop:+ param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:152 rop:then
+o begin
+o // param_text:옆으로놓기 오른쪽
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:152 rop:then
+o begin
+o compute param_dest:motor:9:106 param_src:motor:9:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:10:106 param_src:motor:10:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:17:106 param_src:motor:17:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:18:106 param_src:motor:18:109 aop:+ param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:148 rop:then
+o begin
+o // param_text:옆으로놓기 왼쪽
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:148 rop:then
+o begin
+o compute param_dest:motor:9:106 param_src:motor:9:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:10:106 param_src:motor:10:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:17:106 param_src:motor:17:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:18:106 param_src:motor:18:109 aop:- param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:36 rop:then
+o begin
+o // param_text:일반놓기 왼쪽
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:36 rop:then
+o begin
+o compute param_dest:motor:7:106 param_src:motor:7:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:8:106 param_src:motor:8:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:9:106 param_src:motor:9:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:10:106 param_src:motor:10:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:17:106 param_src:motor:17:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:18:106 param_src:motor:18:109 aop:- param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:132 rop:then
+o begin
+o // param_text:일반놓기 왼쪽(위에랑 같은거)
+o call faddr_dest:Exit실행후정지
+o while param_src:cm:1 lop:== param_src:rc100z_num:132 rop:then
+o begin
+o compute param_dest:motor:7:106 param_src:motor:7:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:8:106 param_src:motor:8:109 aop:+ param_src:dec_num:10
+o compute param_dest:motor:9:106 param_src:motor:9:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:10:106 param_src:motor:10:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:17:106 param_src:motor:17:109 aop:- param_src:dec_num:10
+o compute param_dest:motor:18:106 param_src:motor:18:109 aop:- param_src:dec_num:10
+o end
+o call faddr_dest:모터정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:64 rop:then
+o begin
+o call faddr_dest:Exit실행후정지
+o end
+o elseif param_src:var:수신데이터 lop:== param_src:rc100z_num:0 rop:then
+o begin
+o call faddr_dest:Exit실행후정지
+o end
+o end
+- 
+x if param_src:motion:1:51 lop:== param_src:bool_num:0 rop:then
+x begin
+x load param_dest:motion:1:50 param_src:dec_num:2
+x end
+o end
+o end
+o function faddr_src:내뱉기
+o begin
+o load param_dest:motor:19:107 param_src:dec_num:300
+o if param_src:motor:19:109 lop:>= param_src:dec_num:215 rop:then
+o begin
+o load param_dest:motor:19:106 param_src:position_num:215
+o wait param_src:cm:1 lop:== param_src:rc100z_num:36 rop:then
+o call faddr_dest:집게정지
+o end
+o end
+o function faddr_src:모터정지
+o begin
+o load param_dest:motor:1:106 param_src:motor:1:109
+o load param_dest:motor:2:106 param_src:motor:2:109
+o load param_dest:motor:3:106 param_src:motor:3:109
+o load param_dest:motor:4:106 param_src:motor:4:109
+o load param_dest:motor:19:106 param_src:motor:19:109
+o load param_dest:motor:20:106 param_src:motor:20:109
+o end
+- 
+o function faddr_src:먹기
+o begin
+o load param_dest:motor:19:107 param_src:dec_num:300
+o if param_src:motor:19:109 lop:<= param_src:dec_num:819 rop:then
+o begin
+o load param_dest:motor:19:106 param_src:position_num:819
+o wait param_src:cm:1 lop:== param_src:rc100z_num:40 rop:then
+o call faddr_dest:집게정지
+o end
+o end
+- 
+o function faddr_src:오토올
+o begin
+o load param_dest:motor:19:107 param_src:dec_num:300
+o load param_dest:motor:19:106 param_src:position_num:215
+o end
+- 
+o function faddr_src:집게정지
+o begin
+o load param_dest:motor:19:106 param_src:motor:19:109
+o end
+o function faddr_src:Exit실행후정지
+o begin
+o load param_dest:motion:1:50 param_src:dec_num:0
+o call faddr_dest:모션완료대기
+o end
+o function faddr_src:Exit실행없이정지
+o begin
+o load param_dest:motion:1:50 param_src:dec_num:-1
+o call faddr_dest:모션완료대기
+o end
+o function faddr_src:모션완료대기
+o begin
+o wait param_src:motion:1:51 lop:== param_src:bool_num:1 rop:then
+o end
+- 
+o function faddr_src:타이머완료대기
+o begin
+o wait param_src:cm:5 lop:> param_src:timer_num:0 rop:then
+o end
