@@ -1,3 +1,3 @@
 # 2023IROC-AiMissonRacing
 
-**With Donghyun SCPU(Super Camera Processing Unit)
+**With Donghyun SCPU(Script Camera Processing Unit)
