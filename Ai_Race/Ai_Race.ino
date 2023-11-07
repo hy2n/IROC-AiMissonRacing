@@ -1,20 +1,16 @@
 /* 2023 Ai Racing
-
-By Donghyun / https://donghyun.cc
+ * By Donghyun / https://donghyun.cc
+ * with SCPU 1.02b https://github.com/hy2n/SCPU
 */
-
 
 //Ai Camera   **다이나믹셀 라이브러리하고 출돌해서 먼저 선언 필수**
 
 #include <Pixy2.h>
 Pixy2 pixy;
-
-
-
 //=========================================================//
-//DONGHYUN Dynamic HuskyLens Engine
+//SCPU
 
-//키값
+//키값 - CM530 통신
 
 //Stop
 const uint8_t moveStop[6] = { 0xff, 0x55, 0x00, 0xff, 0x00, 0xff };
